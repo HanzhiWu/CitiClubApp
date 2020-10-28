@@ -14,6 +14,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.example.citiclubapp.Entity.Condition;
 import com.example.citiclubapp.Entity.Warrant;
 import com.example.citiclubapp.R;
 import com.example.citiclubapp.ui.BusinessHallPage.MyWarrant.WarrantDetailActivity;
@@ -58,10 +59,10 @@ public class MyWarrantAdapter extends ArrayAdapter{
         TextView id, type, num, status, detail;
         public void setValue(final Warrant item){
             Log.i("warrant id", item.getWarrantID()+"");
-            id.setText(item.getWarrantID());
+            id.setText(String.valueOf(item.getWarrantID()));
             type.setText(item.getCargoItem());
             num.setText(String.valueOf(item.getCargoWeight()));
-            //status.setText(item.get);
+            status.setText(Condition.getCondition(item.getConditionNode()));
             detail.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

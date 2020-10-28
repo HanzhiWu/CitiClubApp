@@ -1,11 +1,7 @@
 package com.example.citiclubapp.Entity;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-
-import java.util.Collection;
+import java.util.HashMap;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -24,6 +20,7 @@ public class Condition {
     public static final int FINISH=7;
     public static final int ISZHIYA=8;
     static {
+        conditonMap=new HashMap<>();
         conditonMap.put(0,"申请");
         conditonMap.put(1,"等待审核");
         conditonMap.put(2,"签署合同");
@@ -36,9 +33,8 @@ public class Condition {
     }
 
 
-    public String getCondition(int number){
-        Integer integer=number;
-        return conditonMap.get(integer);
+    public static String getCondition(int number){
+        return conditonMap.get(number);
     }
     public int getKeyByValue(String value){
         Set<Integer> keys=conditonMap.keySet();

@@ -54,7 +54,7 @@
             android:layout_marginRight="30dp"
             android:layout_marginBottom="30dp"
             android:background="@drawable/button_shape"
-            android:text="check"
+            android:text="查看我的业务状态"
             android:textColor="@android:color/white"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"

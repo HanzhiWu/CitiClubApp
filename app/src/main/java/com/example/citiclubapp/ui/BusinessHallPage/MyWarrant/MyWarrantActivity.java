@@ -34,19 +34,8 @@ public class MyWarrantActivity extends AppCompatActivity {
 
     private void setList() {
         DBUser dbUser=new DBUser();
-        List<Warrant> warrantList = Arrays.asList(dbUser.returnAllWarrant(MyWarrantActivity.this));
-        /*for (int i = 1; i < 6; i++) {
-            Warrant item = new Warrant();
-            item.setWarrantID(200000 + i);
-            item.setCargoItem(i % 2 == 0 ? "钢材" : "食物");
-            item.setStorageCompany("大连货运仓储公司");
-            item.setCargoWeight(20);
-            item.setStorageExpand(i);
-            item.setPreparingDate(2020, 10, 1);
-            item.setPreparingPlace("辽宁省大连市大连理工大学");
-            item.setStoragePlace("辽宁省大连市大连理工大学");
-            warrantList.add(item);
-        }*/
+        List<Warrant> warrantList = Arrays.asList(dbUser.returnAllWarrant(
+                MyWarrantActivity.this));
         if(warrantList.isEmpty()){
             TextView error=findViewById(R.id.no_warrant);
             error.setVisibility(View.VISIBLE);
